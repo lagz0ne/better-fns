@@ -1,12 +1,17 @@
 {
   "name": "better-fns",
-  "version": "1.1.1",
+  "version": "1.1.0",
   "files": [
     "dist",
     "README.md"
   ],
   "module": "./dist/index.js",
   "main": "./dist/index.cjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lagz0ne/better-fns",
+    "directory": "pkgs/better-fns"
+  },
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
