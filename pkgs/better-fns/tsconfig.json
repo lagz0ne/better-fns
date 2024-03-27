@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "NodeNext",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "esModuleInterop": true,
+    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2020",
+    "module": "NodeNext",
+    "noImplicitAny": true,
+    "paths": {
+      "~/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "include": [
+    "src",
+    "tests"
+  ]
+}

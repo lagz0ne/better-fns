@@ -1,0 +1,43 @@
+{
+  "name": "better-fns",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "module": "./dist/index.js",
+  "main": "./dist/index.cjs",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    },
+    "./logger": {
+      "require": "./dist/logger.cjs",
+      "import": "./dist/logger.js"
+    }
+  },
+  "types": "dist/index.d.ts",
+  "devDependencies": {
+    "@types/lodash": "^4.17.0",
+    "lodash": "^4.17.21",
+    "pino": "^8.19.0",
+    "pino-pretty": "^11.0.0",
+    "tsup": "^8.0.2",
+    "tsx": "^4.7.1",
+    "typescript": "4.9",
+    "vitest": "^1.4.0"
+  },
+  "tsup": {
+    "entry": [
+      "src/index.ts",
+      "src/logger.ts"
+    ],
+    "clean": true,
+    "dts": true,
+    "sourcemap": true
+  },
+  "scripts": {
+    "build": "tsup-node",
+    "test": "vitest"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "better-fn-workspace",
+  "workspaces": [
+    "pkgs/*",
+    "examples/*"
+  ]
+}
