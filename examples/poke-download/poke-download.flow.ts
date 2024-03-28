@@ -1,5 +1,6 @@
 import { run, defineSteps, flow } from "better-fns"
 import { logger } from "better-fns/logger"
+import { tracer } from "better-fns/opentelemetry"
 import * as steps from "./poke-download.activities"
 import path from "path"
 
@@ -41,7 +42,7 @@ const main = async () => {
   const { state, value, error } = await run(
     retrievePokemon, {
     params: ["pikachu"],
-    middlewares: [logger("pikachu")],
+    middlewares: [logger("pikachu"), tracer("pikachu", { batch: false, version: '1.0.0' })],
   })
 
   if (state === 'ok') {
