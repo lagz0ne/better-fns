@@ -15,29 +15,43 @@
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
-      "import": "./dist/index.js"
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     },
     "./logger": {
       "require": "./dist/logger.cjs",
-      "import": "./dist/logger.js"
+      "import": "./dist/logger.js",
+      "types": "./dist/logger.d.ts"
+    },
+    "./opentelemetry": {
+      "require": "./dist/opentelemetry.cjs",
+      "import": "./dist/opentelemetry.js",
+      "types": "./dist/opentelemetry.d.ts"
     }
   },
   "types": "dist/index.d.ts",
   "devDependencies": {
+    "@opentelemetry/api": "^1.8.0",
+    "@opentelemetry/sdk-trace-base": "^1.22.0",
     "@types/lodash": "^4.17.0",
-    "lodash": "^4.17.21",
-    "pino": "^8.19.0",
-    "pino-pretty": "^11.0.0",
     "standard-version": "^9.5.0",
     "tsup": "^8.0.2",
     "tsx": "^4.7.1",
     "typescript": "4.9",
     "vitest": "^1.4.0"
   },
+  "peerDependencies": {
+    "@opentelemetry/api": "*",
+    "@opentelemetry/sdk-trace-base": "*",
+    "lodash": "^4.17.21",
+    "pino": "^8.19.0",
+    "pino-pretty": "^11.0.0"
+  },
   "tsup": {
     "entry": [
       "src/index.ts",
-      "src/logger.ts"
+      "src/logger.ts",
+      "src/opentelemetry.ts"
     ],
     "clean": true,
     "dts": true,

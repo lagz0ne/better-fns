@@ -5,7 +5,7 @@ import { pino, Logger, LoggerOptions } from "pino"
 const loggerSymbol = Symbol('logger')
 
 const getLogger = (context: ExecutionContext, opts: LoggerOptions) => {
-  const parentLogger = context.parent?.getAbitraryData<Logger>(loggerSymbol)
+  const parentLogger = context.parent?.getArbitraryData<Logger>(loggerSymbol)
 
   if (!parentLogger) {
     const logger = pino({
@@ -20,14 +20,14 @@ const getLogger = (context: ExecutionContext, opts: LoggerOptions) => {
       }
     })
 
-    context.setAbitraryData(loggerSymbol, logger)
+    context.setArbitraryData(loggerSymbol, logger)
     return logger
   } else {
     const logger = parentLogger.child({
       ...opts,
       module: opts.name
     })
-    context.setAbitraryData(loggerSymbol, logger)
+    context.setArbitraryData(loggerSymbol, logger)
     return logger
   }
 }

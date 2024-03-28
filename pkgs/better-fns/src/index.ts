@@ -47,11 +47,11 @@ export class ExecutionContext {
     }
   }
 
-  setAbitraryData(key: unknown, value: unknown) {
+  setArbitraryData(key: unknown, value: unknown) {
     this.abitraryData.set(key, value)
   }
 
-  getAbitraryData<T>(key: unknown): T | undefined {
+  getArbitraryData<T>(key: unknown): T {
     return this.abitraryData.get(key) as T
   }
 }
